@@ -12,6 +12,7 @@
             background-color: #000;
             color: #0f0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -70,17 +71,43 @@
             color: #0f0;
             opacity: 1;
         }
+
+        .twitter-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px #0f0;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .twitter-link:hover {
+            background-color: #00ff00;
+            box-shadow: 0 0 20px #00ff00;
+        }
+
+        .twitter-link img {
+            width: 30px;
+            height: 30px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to The Cipher</h1>
         <p>The key is hidden in plain sight.</p>
-        <a href="cipher_decoding_page.html">Decode the Future</a>
+        <a href="https://your-crypto-project.com">Decode the Future</a>
         <div class="hidden-message">
             <p>Every ending is a new beginning. Seek and you shall find.</p>
         </div>
     </div>
+
     <a href="https://x.com/12WordsSol" class="twitter-link" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
     </a>
