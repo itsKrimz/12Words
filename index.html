@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cipher</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            animation: flicker 2s infinite;
+            text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #00ff00;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            opacity: 0.8;
+        }
+
+        a {
+            color: #0f0;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+            border: 2px solid #0f0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: #0f0;
+            color: #000;
+        }
+
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .hidden-message {
+            font-size: 0.8em;
+            margin-top: 30px;
+            color: #666;
+            opacity: 0.5;
+        }
+
+        .hidden-message:hover {
+            color: #0f0;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to The Cipher</h1>
+        <p>The key is hidden in plain sight.</p>
+        <a href="cipher_decoding_page.html">Decode the Future</a>
+        <div class="hidden-message">
+            <p>Every ending is a new beginning. Seek and you shall find.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hiddenMessage = document.querySelector('.hidden-message');
+            hiddenMessage.style.cursor = 'pointer';
+            hiddenMessage.addEventListener('click', () => {
+                alert('Decrypt this: 01010101 01101110 01101100 01101111 01100011 01101011 00101110');
+            });
+        });
+    </script>
+</body>
+</html>

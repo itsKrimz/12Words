@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Challenge</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 80%;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #00ff00;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            margin: 20px 0;
+        }
+
+        .cipher {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px dashed #0f0;
+            font-size: 1.1em;
+            background-color: #111;
+            text-align: left;
+        }
+
+        input {
+            background-color: #111;
+            border: 2px solid #0f0;
+            color: #0f0;
+            width: 300px;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        button {
+            color: #000;
+            background-color: #0f0;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            display: block;
+            margin: 20px auto;
+        }
+
+        button:hover {
+            background-color: #0c0;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Final Challenge</h1>
+        <p>The end is near. Decode the following Vigenère cipher to unveil the final key:</p>
+        <div class="cipher">
+            Cipher Text: WKH TXLFN EURZQ IRA MXPSV RYHU WKH ODCB GRJ
+            <br><br>
+            Key: SHIFT
+        </div>
+        <input id="cipherSolution" placeholder="Enter the decoded message here...">
+        <button onclick="checkCipherSolution()">Submit Solution</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function checkCipherSolution() {
+            const userSolution = document.getElementById('cipherSolution').value.trim();
+            const result = document.getElementById('result');
+
+            // Correct answer after decoding Vigenère cipher
+            const correctAnswer = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
+
+            if (userSolution.toUpperCase() === correctAnswer) {
+                result.textContent = "Correct! You have solved the final layer!";
+                setTimeout(() => {
+                    window.location.href = "https://congratulations-layer.com"; // Replace with the actual URL
+                }, 2000);
+            } else {
+                result.textContent = "Incorrect solution. Try again.";
+            }
+        }
+    </script>
+</body>
+</html>
